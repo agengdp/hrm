@@ -1,11 +1,9 @@
-package db
+package configs
 
 import (
 	"fmt"
-	"log"
 	"os"
 
-	"github.com/joho/godotenv"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
@@ -15,12 +13,8 @@ var (
 	DBCon *gorm.DB
 )
 
-// Init : Initialize mysql connection
-func Init() {
-	envver := godotenv.Load()
-	if envver != nil {
-		log.Fatal("Error loading .env file")
-	}
+// DBInit : Initialize mysql connection
+func DBInit() {
 
 	DBUser := os.Getenv("DB_USER")
 	DBPasswd := os.Getenv("DB_PASS")
