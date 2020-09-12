@@ -16,7 +16,7 @@ func Init() {
 	r.Use(mid.RequestIDMidlleware())
 	r.Use(gzip.Gzip(gzip.DefaultCompression))
 	routes.HealthzRoute(r)
-	routes.ApiRoute(r)
+	routes.WebRoute(r)
 	r.Run()
 
 }
