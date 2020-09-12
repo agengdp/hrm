@@ -1,0 +1,5 @@
+package: .
+import:
+- package: anwarmedika/hrm/server
+- package: github.com/gin-gonic/gin
+  version: v1.6.3
