@@ -1,14 +1,28 @@
 <template>
     <div class="container mx-auto py-5">
-      <router-link :to="{name: 'unit.new'}">Tambah Unit Baru</router-link>
+      <Button
+
+      >
+
+      </Button>
+      <NewUnit v-show="newUnit"></NewUnit>
     </div>
 </template>
 
 <script>
+import NewUnit from "./NewUnit.vue";
+import Button from '../../../components/Forms/Button.vue'
 export default {
-    name: "Unit",
-    components: {
+  name: "Unit",
+  components: {
+    NewUnit,
+    Button
+  },
+  data(){
+    return {
+      newUnit: false
     }
+  }
 }
 </script>
 

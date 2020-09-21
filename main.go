@@ -18,5 +18,4 @@ func init() {
 func main() {
 	server.Init()
 	configs.DBInit()
-
 }

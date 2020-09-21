@@ -1,5 +1,4 @@
 import Unit from '../views/Unit.vue'
-import NewUnit from '../views/NewUnit.vue'
 
 export default [
     {
@@ -8,14 +7,6 @@ export default [
         component: Unit,
         meta: {
             title: 'Unit',
-            layout: 'default'
-        }
-    },{
-        path: '/unit/new',
-        name: 'unit.new',
-        component: NewUnit,
-        meta:{
-            title: 'Tambah Unit Baru',
             layout: 'default'
         }
     }
