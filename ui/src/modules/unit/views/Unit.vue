@@ -1,9 +1,9 @@
 <template>
     <div class="container mx-auto py-5">
       <Button
-
+        text="Tambah Unit Baru"
       >
-
+        Tambah unit baru
       </Button>
       <NewUnit v-show="newUnit"></NewUnit>
     </div>
@@ -20,7 +20,7 @@ export default {
   },
   data(){
     return {
-      newUnit: false
+      newUnit: true
     }
   }
 }
