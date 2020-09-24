@@ -9,7 +9,7 @@
       </a>
       <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-blue-200	flex flex-wrap items-center text-base justify-center font-bold">
         <router-link :to="{name: 'profile.index'}" class="mr-5 hover:text-gray-800">Profil</router-link>
-        <router-link :to="{name: 'unit.index'}" class="mr-5 hover:text-gray-800">Unit</router-link>
+        <router-link :to="{name: 'organization.index'}" class="mr-5 hover:text-gray-800">Struktur Organisasi</router-link>
         <router-link :to="{name: 'employee.index'}" class="mr-5 hover:text-gray-800">Data Pegawai</router-link>
       </nav>
       <button class="inline-flex items-center bg-gray-200 border-0 py-1 px-3 focus:outline-none hover:bg-gray-300 rounded text-base mt-4 md:mt-0">Button
