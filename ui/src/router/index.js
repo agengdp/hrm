@@ -7,7 +7,7 @@ import Home from '../pages/Home.vue'
 import Login from '../pages/Login.vue'
 
 import profileRoutes from "../modules/profile/router/index.js";
-import unitRoutes from "../modules/unit/router/index.js";
+import unitRoutes from "../modules/organization/router/index.js";
 import employeeRoutes from "../modules/employee/router/index.js";
 
 const baseRoutes = [
