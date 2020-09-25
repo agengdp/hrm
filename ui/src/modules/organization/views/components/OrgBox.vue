@@ -1,12 +1,14 @@
 <template>
   <div class="flex border w-1/6 text-left p-2 rounded">
     <div class="flex-1">
-      <div class="text-lg">
-        {{ title }}
-      </div>
-      <div class="text-sm">
-        {{ description }}
-      </div>
+      <slot :node-data="datasource">
+        <div class="text-lg">
+          {{ datasource.title }}
+        </div>
+        <div class="text-sm">
+          {{ datasource.description }}
+        </div>
+      </slot>
     </div>
     <div class="relative">
       <div class="border hover:border-blue-500 rounded-sm hover:border-blue-300">
@@ -21,16 +23,32 @@
       </div>
     </div>
   </div>
+  <template v-if="datasource.children && datasource.children.length">
+    <div class="first-child">
+      <template v-for="n in (datasource.children.length - 1)">
+        adasda
+      </template>
+    </div>
+    <div class="nested-child" v-for="child in datasource.children" :key="child.id">
+      <OrgBox :datasource="child">
+        <template v-for="slot in child.children" :slot="slot">
+          <slot :node-data="slot"></slot>
+        </template>
+      </OrgBox>
+    </div>
+  </template>
+
 </template>
 
 <script>
 export default {
   name: "OrgBox",
   props: [
-    'id',
-    'title',
-    'description'
+    'datasource'
   ],
+  mounted() {
+    console.log(this.datasource)
+  },
   methods:{
     addParent(){
       this.$emit('add-parent', {

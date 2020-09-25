@@ -17,9 +17,9 @@
       </div>
     </div>
     <div>
-
-            <OrgBox></OrgBox>
-
+      <OrgBox
+        :datasource="organizations"
+      ></OrgBox>
     </div>
 </template>
 
