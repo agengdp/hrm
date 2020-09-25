@@ -6,18 +6,15 @@
       >
       </Button>
       <NewOrganization v-show="newUnit"></NewOrganization>
-      <OrgBox></OrgBox>
     </div>
 </template>
 
 <script>
 import NewOrganization from "./NewOrganization.vue";
-import OrgBox from "./components/OrgBox.vue";
 import Button from '../../../components/Forms/Button.vue'
 export default {
   name: "Organization",
   components: {
-    OrgBox,
     NewOrganization,
     Button
   },
