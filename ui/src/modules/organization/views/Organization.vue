@@ -1,26 +1,26 @@
 <template>
     <div class="container mx-auto py-5 text-center">
-      <Button
+      <RButton
         text="Tambah Organisasi Baru"
         @click="this.showNewUnit"
       >
-      </Button>
+      </RButton>
       <NewOrganization v-show="newUnit"></NewOrganization>
     </div>
 </template>
 
 <script>
 import NewOrganization from "./NewOrganization.vue";
-import Button from '../../../components/Forms/Button.vue'
+import RButton from '../../../components/Forms/RButton.vue'
 export default {
   name: "Organization",
   components: {
     NewOrganization,
-    Button
+    RButton
   },
   data(){
     return {
-      newUnit: false
+      newUnit: true
     }
   },
   methods: {

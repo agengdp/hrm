@@ -1,86 +1,59 @@
 <template>
+  <div>
     <div class="bg-gray-200 p-3 pt-5 mt-2 w-1/3 mx-auto text-left border border-gray-400 rounded-sm">
-      <Input
+      <RInput
         placeholder="blablalba"
         label="Nama Organisasi"
-      ></Input>
-      <TextArea
+      ></RInput>
+      <RTextArea
         placeholder="haha"
         label="Deskripsi"
-      ></TextArea>
+      ></RTextArea>
       <div class="text-right">
-        <Button
+        <RButton
           text="Add"
           type="secondary"
           size="small"
-        ></Button>
+        ></RButton>
       </div>
     </div>
-    <div>
-      <OrgBox
-        :datasource="organizations"
-      ></OrgBox>
+    <div class="flex flex-col justify-center items-center">
+      <div class="text-center">
+        <OrgBox
+          :datasource="organizations"
+        ></OrgBox>
+      </div>
     </div>
+  </div>
 </template>
 
 <script>
 
-import Input from '../../../components/Forms/Input.vue'
-import TextArea from '../../../components/Forms/TextArea.vue'
-import Button from '../../../components/Forms/Button.vue'
+import RInput from '../../../components/Forms/RInput.vue'
+import RTextArea from '../../../components/Forms/RTextArea.vue'
+import RButton from '../../../components/Forms/RButton.vue'
 import OrgBox from "./components/OrgBox.vue";
 
 export default {
   name: "NewOrganization",
   components: {
-    Input,
-    Button,
-    TextArea,
+    RInput,
+    RButton,
+    RTextArea,
     OrgBox
   },
   data(){
     return{
-      'organizations': {
-        'id': '1',
-        'title': 'Direktur Utama',
-        'description': 'Pemimpin Perusahaan',
-        'children': [
-          {
-            'id': '2',
-            'title': 'Wadir Umum',
-            'description': 'Wakil Direktur bagian umum',
-            'children': [
-              {
-                'id': '4',
-                'title': 'Keuangan',
-                'description': 'Bagian Keuangan'
-              },
-              {
-                'id': '5',
-                'title': 'IT',
-                'description': 'Bagian IT',
-                'children': [
-                  {
-                    'id': '6',
-                    'title': 'Hardware',
-                    'description': 'Bagian IT Hardware',
-                  },
-                  {
-                    'id': '7',
-                    'title': 'Software',
-                    'description': 'Bagian Software',
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            'id': '3',
-            'title': 'Wadir Pelayanan',
-            'description': 'Wakil Direktur bagian pelayanan'
-          }
-        ]
-      }
+      'organizations': [
+        {'id': '1', 'title': 'Direktur Utama', 'description': 'Pemimpin Perusahaan'},
+        {'id': '2', 'parent_id': '1', 'title': 'Wadir Umum', 'description': 'Wakil Direktur bagian umum'},
+        {'id': '3', 'parent_id': '1', 'title': 'Wadir Pelayanan', 'description': 'Wakil Direktur bagian pelayanan'},
+        {'id': '4', 'parent_id': '2', 'title': 'Keuangan', 'description': 'Bagian Keuangan'},
+        {'id': '5', 'parent_id': '2', 'title': 'IT', 'description': 'Bagian IT'},
+        {'id': '6', 'parent_id': '5', 'title': 'Software', 'description': 'Bagian Software'},
+        {'id': '7', 'parent_id': '5', 'title': 'Hardware', 'description': 'Bagian Hardware'},
+        {'id': '8', 'parent_id': '5', 'title': 'Network', 'description': 'Bagian Network'},
+      ]
     }
   }
 }
